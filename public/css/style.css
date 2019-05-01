@@ -1,0 +1,17 @@
+html, body {
+    /*background-color: #fff;*/
+    color: #636b6f;
+
+    /*font-family: 'Nunito', sans-serif;*/
+    
+    height: 100vh;
+    margin: 0;
+   background-image: url("donuts-free-photo-1080x720.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.py-4{
+    background-image: url(img/donuts-free-photo-1080x720.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
