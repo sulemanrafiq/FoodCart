@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('menus','MenuController');
+Route::resource('users','UsersController');
+
 //Route::get('/menus/{$id}/edit', 'MenuController@edit');
 

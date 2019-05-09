@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
+        <button style="margin-bottom: 10px;" type="button" class="btn btn-primary" ><a style="color: white;text-decoration: none" href="{{ URL::previous() }}">Back</a></button>
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -13,29 +15,36 @@
                         @if(session('msg'))
                             <p class="alert alert-danger">{{session('msg')}}</p>
                         @endif
+
                             {!! Form::open(['method' => 'POST', 'route' => ['menus.update', $menus ['id'] ] ]) !!}
 
 
                         <div class="form-row">
-                            <div class="form-group">
+                            <div class="col-lg-3">
+                            <div class=" form-group">
 
-                                {!! Form::text('item_name',  old('item_name', $menus->item_name),['class'=>'form-group', 'id'=>'item_name'  ]) !!}
+                                {!! Form::text('item_name',  old('item_name', $menus->item_name),['class'=>'form-control', 'id'=>'item_name'  ]) !!}
                             </div>
-                            <div class="form-group">
-                                {!! Form::select('type',  array('burger' => 'burger', 'Drinks' => 'Drinks','Fries' => 'Fries', 'sweets' => 'sweets'), 'burger' ,['class'=>'form-group', 'id'=>'type' ]) !!}
-
                             </div>
+                            <div class="col-lg-2">
+                            <div class="form-group">
+                                {!! Form::select('type',  array('burger' => 'burger', 'Drinks' => 'Drinks','Fries' => 'Fries', 'sweets' => 'sweets'), 'burger' , ['class'=>'form-control', 'id'=>'type' ]) !!}
+
+                            </div></div>
+                            <div class="col-lg-2">
                             <div class="form-group">
 
-                                {!! Form::text('price', old('price', $menus->price),['class'=>'form-group', 'id'=>'price' , 'placeholder' => 'Price']) !!}
+                                {!! Form::text('price', old('price', $menus->price),['class'=>'form-control', 'id'=>'price' , 'placeholder' => 'Price']) !!}
+                            </div></div>
+                            <div class="col-lg-4">
+                            <div class="form-group">
+
+                                {!! Form::text('description', old('description', $menus->description),['class'=>'form-control', 'id'=>'description' , 'placeholder' => 'description']) !!}
                             </div>
-                            <div class="form-group">
-
-                                {!! Form::text('description', old('description', $menus->description),['class'=>'form-group', 'id'=>'description' , 'placeholder' => 'description']) !!}
                             </div>
                             {!! Form::hidden('_method','PUT') !!}
                             <div class="form-group">
-                                {!! Form::button(isset($model)? 'update':'update', ['class'=>'btn btn-success', 'type'=>'submit']) !!}
+                                {!! Form::button(isset($model)? 'update':'update', ['class'=>'btn btn-info', 'type'=>'submit']) !!}
 
                             </div>
 

@@ -31,3 +31,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+
+$("document").ready(function(){
+    setTimeout(function(){
+        $("div.alert").remove();
+    }, 5000 ); // 5 secs
+
+});
